@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Свадебное приглашение</title>
+
+<!-- Красивые шрифты -->
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="
+https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* ======================================
+   ОСНОВА
+====================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5efe3;
+    color: #604b2d;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+}
+
+
+/* ======================================
+   ЗАГРУЗКА
+====================================== */
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background: #f8f3e9;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 1s;
+}
+
+.loader.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-heart {
+    font-size: 45px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* ======================================
+   ПЕРВЫЙ ЭКРАН
+====================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffdf8 0%,
+            #eee3cf 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* цветы */
+
+.flower {
+    position: absolute;
+
+    font-size: 70px;
+
+    opacity: .55;
+
+    animation:
+        floatFlower 5s ease-in-out infinite;
+}
+
+.flower-1 {
+    top: 20px;
+    left: -5px;
+}
+
+.flower-2 {
+    top: 30px;
+    right: -5px;
+    animation-delay: 1s;
+}
+
+.flower-3 {
+    bottom: 20px;
+    left: -5px;
+    animation-delay: 2s;
+}
+
+.flower-4 {
+    bottom: 20px;
+    right: -5px;
+    animation-delay: 1.5s;
+}
+
+@keyframes floatFlower {
+
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+
+/* ======================================
+   ГЛАВНАЯ КАРТОЧКА
+====================================== */
+
+.hero-card {
+
+    width: 100%;
+    max-width: 420px;
+
+    min-height: 650px;
+
+    padding: 55px 28px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    border: 1px solid #d3b77a;
+
+    box-shadow:
+        0 30px 80px rgba(86,63,29,.18);
+
+    text-align: center;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    animation:
+        cardAppear 1.8s ease;
+}
+
+
+/* внутренняя рамка */
+
+.hero-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid
+        rgba(179,146,77,.35);
+
+    pointer-events: none;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            perspective(1000px)
+            rotateX(12deg)
+            translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            perspective(1000px)
+            rotateX(0)
+            translateY(0);
+    }
+}
+
+
+/* ======================================
+   БИСМИЛЛА
+====================================== */
+
+.bismillah {
+
+    font-family:
+        'Noto Naskh Arabic',
+        serif;
+
+    font-size: 27px;
+
+    color: #9d7837;
+
+    margin-bottom: 25px;
+}
+
+
+/* ======================================
+   ЗАГОЛОВОК
+====================================== */
+
+.subtitle {
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.title {
+
+    font-size: 45px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: #80602d;
+
+    margin-bottom: 25px;
+}
+
+
+/* ======================================
+   ИМЕНА
+====================================== */
+
+.names {
+
+    margin: 15px 0 25px;
+}
+
+.arabic {
+
+    font-family:
+        'Noto Naskh Arabic',
+        serif;
+
+    font-size: 62px;
+
+    color: #a17a34;
+
+    line-height: 1.15;
+}
+
+.names .amp {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 38px;
+
+    color: #b18a46;
+
+    margin: 4px 0;
+}
+
+
+/* ======================================
+   ТЕКСТ
+====================================== */
+
+.hero-text {
+
+    font-size: 22px;
+
+    line-height: 1.5;
+
+    max-width: 330px;
+
+    margin: auto;
+}
+
+
+/* ======================================
+   ДАТА
+====================================== */
+
+.hero-date {
+
+    margin-top: 30px;
+
+    font-size: 25px;
+
+    color: #8b6b37;
+}
+
+.scroll {
+
+    margin-top: 35px;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    opacity: .65;
+
+    animation:
+        scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+
+    0%,100% {
+        opacity: .35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* ======================================
+   ОБЩИЕ СЕКЦИИ
+====================================== */
+
+section {
+    padding: 80px 20px;
+
+    position: relative;
+}
+
+.section-inner {
+
+    max-width: 440px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.section-card {
+
+    background:
+        rgba(255,253,248,.94);
+
+    border: 1px solid #d3b77a;
+
+    padding: 45px 25px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(85,63,30,.12);
+
+    position: relative;
+}
+
+
+/* ======================================
+   АНИМАЦИЯ ПОЯВЛЕНИЯ
+====================================== */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ======================================
+   ЗАГОЛОВКИ
+====================================== */
+
+.section-title {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    color: #987236;
+
+    margin-bottom: 25px;
+}
+
+.ornament {
+
+    color: #b3924e;
+
+    font-size: 23px;
+
+    letter-spacing: 6px;
+
+    margin: 20px 0;
+}
+
+
+/* ======================================
+   ПРИГЛАШЕНИЕ
+====================================== */
+
+.invitation-text {
+
+    font-size: 22px;
+
+    line-height: 1.6;
+}
+
+
+/* ======================================
+   ДАТЫ
+====================================== */
+
+.event {
+
+    margin-top: 25px;
+
+    padding: 22px 10px;
+
+    border-top: 1px solid #d7bf8a;
+
+    border-bottom: 1px solid #d7bf8a;
+}
+
+.event-name {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 38px;
+
+    color: #8e6b35;
+}
+
+.event-date {
+
+    font-size: 27px;
+
+    margin-top: 7px;
+}
+
+.event-description {
+
+    font-size: 18px;
+
+    margin-top: 7px;
+
+    opacity: .75;
+}
+
+
+/* ======================================
+   СВАДЬБА
+====================================== */
+
+.wedding-date {
+
+    font-size: 35px;
+
+    color: #927036;
+
+    margin: 15px 0;
+}
+
+.time {
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ======================================
+   МЕСТО
+====================================== */
+
+.map-box {
+
+    width: 100%;
+
+    height: 250px;
+
+    margin: 25px 0;
+
+    border: 1px solid #d0b574;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee5d3,
+            #faf7ef
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+}
+
+
+/* ======================================
+   КНОПКИ
+====================================== */
+
+.button {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #b89245;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d7bd7d,
+            #a57a2f
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    margin-top: 15px;
+}
+
+.button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(100,70,25,.2);
+}
+
+
+/* ======================================
+   RSVP
+====================================== */
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 7px;
+
+    border:
+        1px solid #d2ba81;
+
+    background: #fffdf8;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    outline: none;
+}
+
+.form-group {
+
+    text-align: left;
+
+    margin-bottom: 18px;
+}
+
+.form-group label {
+
+    font-size: 16px;
+}
+
+
+/* ======================================
+   ФИНАЛ
+====================================== */
+
+.final-names {
+
+    font-family:
+        'Noto Naskh Arabic',
+        serif;
+
+    font-size: 48px;
+
+    color: #9b7636;
+
+    margin: 25px 0;
+}
+
+.final-heart {
+
+    font-size: 38px;
+
+    animation:
+        heartbeat 2s infinite;
+}
+
+
+/* ======================================
+   НАВИГАЦИЯ
+====================================== */
+
+.bottom-nav {
+
+    position: fixed;
+
+    bottom: 12px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        calc(100% - 25px);
+
+    max-width: 440px;
+
+    display: flex;
+
+    gap: 4px;
+
+    padding: 7px;
+
+    background:
+        rgba(255,253,248,.93);
+
+    border:
+        1px solid #d3b77a;
+
+    backdrop-filter:
+        blur(12px);
+
+    z-index: 100;
+}
+
+.bottom-nav a {
+
+    flex: 1;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: #80622d;
+
+    padding: 9px 3px;
+
+    font-size: 13px;
+}
+
+
+/* ======================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+====================================== */
+
+@media(max-width:420px) {
+
+    .hero-card {
+        min-height: 620px;
+        padding: 45px 20px;
+    }
+
+    .title {
+        font-size: 39px;
+    }
+
+    .arabic {
+        font-size: 54px;
+    }
+
+    .section-title {
+        font-size: 43px;
+    }
+
+    .hero-text,
+    .invitation-text {
+        font-size: 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==================================
+     ЗАГРУЗКА
+================================== -->
+
+<div class="loader" id="loader">
+
+    <div class="loader-heart">
+        ♡
+    </div>
+
+</div>
+
+
+<!-- ==================================
+     ГЛАВНАЯ
+================================== -->
+
+<section class="hero" id="home">
+
+    <div class="flower flower-1">
+        🌿
+    </div>
+
+    <div class="flower flower-2">
+        🌸
+    </div>
+
+    <div class="flower flower-3">
+        🌹
+    </div>
+
+    <div class="flower flower-4">
+        🌿
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="bismillah">
+            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+        </div>
+
+        <div class="ornament">
+            ── ❦ ──
+        </div>
+
+        <div class="subtitle">
+            Свадебное приглашение
+        </div>
+
+        <div class="names">
+
+            <div class="arabic">
+                مجيد
+            </div>
+
+            <div class="amp">
+                &
+            </div>
+
+            <div class="arabic">
+                آسيا
+            </div>
+
+        </div>
+
+        <div class="hero-text">
+
+            С радостью приглашаем Вас
+            разделить с нами
+            один из самых важных дней
+            нашей жизни.
+
+        </div>
+
+        <div class="hero-date">
+            03.10.2026
+        </div>
+
+        <div class="scroll">
+            ↓ ЛИСТАЙТЕ ВНИЗ ↓
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     ПРИГЛАШЕНИЕ
+================================== -->
+
+<section id="invitation">
+
+    <div class="section-inner">
+
+        <div class="section-card reveal">
+
+            <div class="section-title">
+                Дорогие гости!
+            </div>
+
+            <div class="ornament">
+                ❦
+            </div>
+
+            <div class="invitation-text">
+
+                Приглашаем Вас разделить
+                с нами радость этого
+                особенного дня и стать
+                частью начала нашей
+                семейной истории.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     СОБЫТИЯ
+================================== -->
+
+<section id="events">
+
+    <div class="section-inner">
+
+        <div class="section-card reveal">
+
+            <div class="section-title">
+                Наши дни
+            </div>
+
+
+            <div class="event">
+
+                <div class="event-name">
+                    Дагэ ду
+                </div>
+
+                <div class="event-date">
+                    02.10.26
+                </div>
+
+            </div>
+
+
+            <div class="event">
+
+                <div class="event-name">
+                    Свадьба
+                </div>
+
+                <div class="event-date">
+                    03.10.26
+                </div>
+
+                <div class="event-description">
+                    Праздничный день
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     СВАДЬБА
+================================== -->
+
+<section id="wedding">
+
+    <div class="section-inner">
+
+        <div class="section-card reveal">
+
+            <div class="section-title">
+                Свадьба
+            </div>
+
+            <div class="wedding-date">
+                03.10.26
+            </div>
+
+            <div class="time">
+                Время уточняется
+            </div>
+
+            <div class="ornament">
+                ── ♡ ──
+            </div>
+
+            <div class="invitation-text">
+
+                Будем счастливы видеть Вас
+                среди наших дорогих гостей.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     МЕСТО
+================================== -->
+
+<section id="location">
+
+    <div class="section-inner">
+
+        <div class="section-card reveal">
+
+            <div class="section-title">
+                Место проведения
+            </div>
+
+            <div class="map-box">
+
+                📍
+
+            </div>
+
+            <div class="invitation-text">
+
+                Улица Охотничья, 84
+
+            </div>
+
+            <a
+                class="button"
+                href="https://www.google.com/maps/search/?api=1&query=Охотничья+84"
+                target="_blank">
+
+                Открыть карту
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     ПОДТВЕРЖДЕНИЕ
+================================== -->
+
+<section id="rsvp">
+
+    <div class="section-inner">
+
+        <div class="section-card reveal">
+
+            <div class="section-title">
+                Подтверждение
+            </div>
+
+            <div class="invitation-text">
+
+                Пожалуйста, подтвердите
+                своё присутствие.
+
+            </div>
+
+            <br>
+
+
+            <div class="form-group">
+
+                <label>
+                    Ваше имя
+                </label>
+
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Введите имя">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Количество гостей
+                </label>
+
+                <select id="guests">
+
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="button"
+                onclick="sendRSVP()">
+
+                Подтвердить присутствие
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     ФИНАЛ
+================================== -->
+
+<section>
+
+    <div class="section-inner">
+
+        <div class="section-card reveal">
+
+            <div class="section-title">
+                До встречи!
+            </div>
+
+            <div class="final-heart">
+                ♡
+            </div>
+
+            <div class="final-names">
+
+                مجيد
+                &
+                آسيا
+
+            </div>
+
+            <div class="ornament">
+                ── ❦ ──
+            </div>
+
+            <div class="invitation-text">
+
+                С любовью ждём Вас
+                на нашем празднике.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     НИЖНЕЕ МЕНЮ
+================================== -->
+
+<div class="bottom-nav">
+
+    <a href="#home">
+        Главная
+    </a>
+
+    <a href="#events">
+        Даты
+    </a>
+
+    <a href="#location">
+        Место
+    </a>
+
+    <a href="#rsvp">
+        Ответ
+    </a>
+
+</div>
+
+
+<script>
+
+/* ==================================
+   ЗАГРУЗКА
+================================== */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        setTimeout(() => {
+
+            document
+                .getElementById("loader")
+                .classList
+                .add("hide");
+
+        }, 700);
+
+    }
+);
+
+
+/* ==================================
+   АНИМАЦИЯ ПРИ ПРОКРУТКЕ
+================================== */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting) {
+
+                    entry.target
+                        .classList
+                        .add("visible");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .18
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+/* ==================================
+   RSVP
+================================== */
+
+function sendRSVP() {
+
+    const name =
+        document
+        .getElementById("name")
+        .value;
+
+    const guests =
+        document
+        .getElementById("guests")
+        .value;
+
+    if(!name.trim()) {
+
+        alert(
+            "Пожалуйста, введите имя."
+        );
+
+        return;
+    }
+
+    alert(
+        "Спасибо, " +
+        name +
+        "! Мы получили Ваш ответ."
+    );
+
+}
+
+
+/* ==================================
+   ПАРАЛЛАКС
+================================== */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const flowers =
+            document
+            .querySelectorAll(".flower");
+
+        flowers.forEach(
+            (flower, index) => {
+
+                const speed =
+                    (index + 1) * 0.08;
+
+                flower.style.transform =
+                    `translateY(${window.scrollY * speed}px)`;
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
